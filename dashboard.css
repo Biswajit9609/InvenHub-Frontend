@@ -135,12 +135,6 @@ p {
     background-color: #174875;
     color: white;
 }
-
-/* Additional styles for the sidebar and buttons */
-.sidebar-footer {
-    padding: 10px;
-}
-
 .sidebar-footer a {
     display: flex;
     align-items: center;
