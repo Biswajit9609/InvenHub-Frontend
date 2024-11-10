@@ -184,45 +184,36 @@
         let otpCode = '';
         inputs.forEach(input => otpCode += input.value);
         
-        // Create a hidden input to store combined OTP
-        const hiddenOtpInput = document.createElement('input');
-        hiddenOtpInput.type = 'hidden';
-        hiddenOtpInput.name = 'otp';
-        hiddenOtpInput.value = otpCode;
-        otpForm.appendChild(hiddenOtpInput);
-
-        otpForm.submit();
+        // Simulate OTP verification (replace with actual server verification)
+        if (otpCode === '123456') {  // Example successful OTP
+          showPopup();
+        } else {
+          alert('Invalid OTP. Please try again.');
+        }
       });
     });
+  
     function showPopup() {
-            const popup = document.getElementById("popup");
-            const loader = document.querySelector(".loader");
-            const message = document.querySelector(".message");
-            const okButton = document.querySelector(".ok-button");
-
-            popup.style.display = "flex"; 
-            loader.style.display = "block";
-            message.style.display = "none";
-            okButton.style.display = "none";
-
-            setTimeout(() => {
-                loader.style.display = "none";
-                message.style.display = "block";
-                okButton.style.display = "inline-block";
-            }, 2000);
-        }
-
-        function redirectToDashboard() {
-            window.location.href = "dashboard.html";
-        }
-
-        document.addEventListener("DOMContentLoaded", function() {
-            const signupForm = document.getElementById("signupForm");
-            signupForm.addEventListener("submit", function(event) {
-                event.preventDefault();
-                showPopup();
-            });
-        });
+      const popup = document.getElementById("popup");
+      const loader = document.querySelector(".loader");
+      const message = document.querySelector(".message");
+      const okButton = document.querySelector(".ok-button");
+  
+      popup.style.display = "flex"; 
+      loader.style.display = "block";
+      message.style.display = "none";
+      okButton.style.display = "none";
+  
+      setTimeout(() => {
+        loader.style.display = "none";
+        message.style.display = "block";
+        okButton.style.display = "inline-block";
+      }, 2000);
+    }
+  
+    function redirectToDashboard() {
+      window.location.href = "dashboard.html";
+    }
   </script>
 
 </body>
