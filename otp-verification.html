@@ -134,19 +134,19 @@
       <h2 class="text-center otp-header">OTP Verification</h2>
       <p class="text-center">Enter the OTP sent to your email</p>
       
-      <form id="otpForm" action="#" method="POST">
+      <form id="otpForm" action="/verify_otp" method="POST">
         <div class="form-group d-flex justify-content-center">
-          <input type="text" maxlength="1" class="form-control otp-input" required>
-          <input type="text" maxlength="1" class="form-control otp-input" required>
-          <input type="text" maxlength="1" class="form-control otp-input" required>
-          <input type="text" maxlength="1" class="form-control otp-input" required>
-          <input type="text" maxlength="1" class="form-control otp-input" required>
-          <input type="text" maxlength="1" class="form-control otp-input" required>
+          <input type="text" name="otp1" maxlength="1" class="form-control otp-input" required>
+          <input type="text" name="otp2" maxlength="1" class="form-control otp-input" required>
+          <input type="text" name="otp3" maxlength="1" class="form-control otp-input" required>
+          <input type="text" name="otp4" maxlength="1" class="form-control otp-input" required>
+          <input type="text" name="otp5" maxlength="1" class="form-control otp-input" required>
+          <input type="text" name="otp6" maxlength="1" class="form-control otp-input" required>
         </div>
         
         <button type="submit" class="btn btn-primary submit-btn">Verify OTP</button>
         
-        <a href="#" class="resend-link">Didn't receive the OTP? Resend</a>
+        <a href="/resend_otp" class="resend-link">Didn't receive the OTP? Resend</a>
       </form>
     </div>
   </div>
@@ -167,13 +167,31 @@
   <script>
     document.addEventListener("DOMContentLoaded", function() {
       const inputs = document.querySelectorAll('.otp-input');
+      const otpForm = document.getElementById('otpForm');
       
+      // Move focus to the next input on typing
       inputs.forEach((input, index) => {
         input.addEventListener('input', function() {
           if (this.value.length === 1 && index < inputs.length - 1) {
             inputs[index + 1].focus();
           }
         });
+      });
+      
+      // Combine OTP input values into one hidden field on submit
+      otpForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+        let otpCode = '';
+        inputs.forEach(input => otpCode += input.value);
+        
+        // Create a hidden input to store combined OTP
+        const hiddenOtpInput = document.createElement('input');
+        hiddenOtpInput.type = 'hidden';
+        hiddenOtpInput.name = 'otp';
+        hiddenOtpInput.value = otpCode;
+        otpForm.appendChild(hiddenOtpInput);
+
+        otpForm.submit();
       });
     });
     function showPopup() {
