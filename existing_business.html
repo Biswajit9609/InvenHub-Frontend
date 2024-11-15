@@ -42,10 +42,10 @@ button {
     color: white;
 }
 #img{
-    background-image: url(images/undraw_forms_re_pkrt.svg);
+    background-image: url(images/undraw_interview_re_e5jn.svg);
     background-size: cover;
-    margin-left: 30px;
-    margin-top: 20px;
+    /* margin-left: 30px;
+    margin-top: 20px; */
 }
     </style>
     <div class="wrapper">
@@ -136,45 +136,15 @@ button {
                 <div class="col"></div>
             </div>
             <div class="row justify-content-center" style="height: 8vh;" id="bg">
-                <h2 class="text-center mt-2" style="color: #0e2238;font-weight: bold;">Create your Business Profile</h2>
+                <h2 class="text-center mt-2" style="color: #0e2238;font-weight: bold;">Join existing Business</h2>
             </div>
             <div class="row" style="height: 84vh;" id="bg">
                 <div class="col">
                     <div class="row justify-content-center">
                         <div class="col-10 mt-4">
-        <form id="businessForm" onsubmit="return validateForm()">
-            <div class="mb-3">
-                <label for="storeName" class="form-label">Store Name*</label>
-                <input type="text" class="form-control" id="storeName" placeholder="Enter Store Name" required>
-                <div id="storeNameError" class="invalid-feedback">Store name is required.</div>
-            </div>
-            
-            <div class="mb-3">
-                <label for="ownerName" class="form-label">Owner's Name*</label>
-                <input type="text" class="form-control" id="ownerName" placeholder="Enter Owner's Name" required>
-                <div id="ownerNameError" class="invalid-feedback">Owner's name is required.</div>
-            </div>
-
-            <div class="mb-3">
-                <label for="email" class="form-label">Business Email ( Leave blank if same as account email. ) </label>
-                <input type="email" class="form-control" id="email" placeholder="Enter Business Email">
-                <div id="emailError" class="invalid-feedback">Please provide a valid email.</div>
-            </div>
-
-            <div class="mb-3">
-                <label for="phone" class="form-label">GST Number ( Optional )</label>
-                <input type="text" class="form-control" id="phone" placeholder="Enter GST Number">
-                <div id="phoneError" class="invalid-feedback">Please provide a valid GST number.</div>
-            </div>
-
-            <div class="mb-4">
-                <label for="address" class="form-label">Business Address</label>
-                <textarea class="form-control" id="address" rows="3" placeholder="Enter Business Address" required></textarea>
-                <div id="addressError" class="invalid-feedback">Address is required.</div>
-            </div>
-
-            <button type="submit" class="btn w-100" id="btn">Submit</button>
-        </form>
+                            <div class="row" style="height:70vh;width:40vw;"">
+                                <div class="col mt-3" id="img"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -182,14 +152,19 @@ button {
                     <div class="row" style="height: auto;">
                         <div class="col-10 mt-4">
                             <label for="option" class="form-label">Select a Business Option</label>
-                            <select class="form-select" aria-label="Default select example" id="business-profile" onchange="redirectToPage()">
-                                <option selected>Create your Business Profile</option>
-                                <option value="existing_business.html">Join existing Business</option>
+                            <select class="form-select" id="business-profile" aria-label="Default select example" onchange="redirectToPage()">
+                                <option selected>Join existing Business</option>
+                                <option value="Business_profile.html">Create your Business Profile</option>
                             </select>
+                            <form id="businessForm" onsubmit="return validateForm()">
+                                <div class="mb-3 mt-3">
+                                    <label for="storeName" class="form-label">Store Id*</label>
+                                    <input type="text" class="form-control" id="storeName" placeholder="Enter Store Id" required>
+                                    <div id="storeNameError" class="invalid-feedback">Store id is required.</div>
+                                </div>
+                                <button type="submit" class="btn w-100" id="btn">Submit</button>
+                            </form>
                         </div>
-                    </div>
-                    <div class="row" style="height:65vh;width:38vw;"">
-                        <div class="col mt-3" id="img"></div>
                     </div>
                 </div>
             </div>
