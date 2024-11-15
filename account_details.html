@@ -58,6 +58,33 @@ button {
         #illus{
             margin-top: 100px;
         }
+        .info-row {
+    margin-bottom: 10px;
+}
+
+.btn-light {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    outline: none; /* Remove focus outline */
+    box-shadow: none; /* Remove shadow on click (browser default styles) */
+}
+
+.btn-light:hover, 
+.btn-light:focus, 
+.btn-light:active {
+    border: none;
+    background-color: transparent;
+    outline: none; /* Ensure no outline on focus */
+    box-shadow: none; /* Prevent box shadow on active state */
+    cursor: pointer;
+}
+
+.btn-light i {
+    font-size: 16px;
+    color: #007bff;
+}
+
     </style>
     <div class="wrapper">
         <aside id="sidebar">
@@ -202,8 +229,12 @@ button {
                                 <div class="info-row">
                                     <strong>Store Type:</strong> <span id="storeType">Retail</span>
                                 </div>
-                                <div class="info-row">
-                                    <strong>Store ID:</strong> <span id="storeID">23165DDBSK483</span>
+                                <div class="info-row d-flex align-items-center">
+                                    <strong>Store ID:</strong> 
+                                    <span id="storeID" style="margin-left: 5px;">***************</span>
+                                    <button class="btn btn-light btn-sm ml-2" id="toggleEye" onclick="toggleStoreID()">
+                                        <img id="eyeIcon" src="images/icons8-closed-eye-32.png" alt="Eye Icon" style="width: 20px; height: 20px;">
+                                    </button>
                                 </div>
                                 <div class="text-center edit-btn">
                                     <button class="btn btn-primary" onclick="enableEditing()">Edit</button>
@@ -215,6 +246,20 @@ button {
             </div>
         </div>
     </div>
+    <script>
+        function toggleStoreID() {
+    const storeID = document.getElementById('storeID');
+    const eyeIcon = document.getElementById('eyeIcon');
+    
+    if (storeID.textContent === '***************') {
+        storeID.textContent = '23165DDBSK483';
+        eyeIcon.src ="images/icons8-closed-eye-32.png";
+    } else {
+        storeID.textContent = '***************';
+        eyeIcon.src = 'images/icons8-eye-64.png';
+    }
+}
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
         crossorigin="anonymous"></script>
