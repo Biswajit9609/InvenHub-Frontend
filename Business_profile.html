@@ -76,9 +76,13 @@ button {
 @keyframes l6 {
   to {transform: perspective(300px) translateZ(150px);opacity:0}
 }
-
-
-@keyframes l1 {to{transform: rotate(.5turn)}}
+#loc{
+    width: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
     </style>
     <div class="wrapper">
         <aside id="sidebar">
@@ -200,11 +204,17 @@ button {
                 <div id="phoneError" class="invalid-feedback">Please provide a valid GST number.</div>
             </div>
             <div class="mb-4">
-                <label for="address" class="form-label">Address</label>
-                <input type="text" class="form-control" id="address" placeholder="Enter Your Address">
+                <div class="row">
+                    <div class="col-11">
+                        <label for="address" class="form-label">Address</label>
+                        <input type="text" class="form-control" id="address" placeholder="Enter Your Address">
+                    </div>
+                    <div class="col" id="loc">
+                        <button type="button" id="getLocation" style="background-color: transparent;border: 0px solid transparent;"><img src="images/icons8-location-48 (1).png" alt=""></button>
+                    </div>
+                </div>
             </div>
             <div class="btn-gps mb-4">
-                <button type="button" class="btn" id="getLocation" style="background-color: #102741; color: white;">Get Current Location</button>
                 <div class="spinner" role="status"></div>
             </div>
             <div class="mb-3" hidden>
