@@ -67,15 +67,20 @@ button {
   inset: 0;
   border-radius: 50% 50% 0 50%;
   background: #2a85cd;
-  -webkit-mask: radial-gradient(circle 10px at 50% 50%,#0000 94%,#000);
+  -webkit-mask: radial-gradient(circle 10px at 50% 50%, #0000 94%, #000); /* For WebKit-based browsers */
+  mask: radial-gradient(circle 10px at 50% 50%, #0000 94%, #000); /* Standard property */
 }
 .spinner:after {
   animation: l6 1s infinite;
-  transform: perspective(300px) translateZ(0px)
+  transform: perspective(300px) translateZ(0px);
 }
 @keyframes l6 {
-  to {transform: perspective(300px) translateZ(150px);opacity:0}
+  to {
+    transform: perspective(300px) translateZ(150px);
+    opacity: 0;
+  }
 }
+
 #loc{
     width: 20px;
     display: flex;
