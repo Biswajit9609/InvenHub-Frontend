@@ -29,14 +29,18 @@ body {
 }
 
 .main {
+    /* height: 200vh; */
     min-height: 100vh;
     width: 100%;
     overflow: hidden;
     transition: margin-left 0.35s ease; /* Smooth transition for main content */
     background-color: #fafbfe;
+    margin-left: 70px;
 }
 
 #sidebar {
+    height: 100vh;
+    position: fixed;
     width: 70px; /* Collapsed width */
     min-width: 70px;
     z-index: 1000;
@@ -49,6 +53,9 @@ body {
 
 #sidebar:hover {
     width: 260px; /* Expanded width on hover */
+}
+#sidebar:hover~.main {
+    margin-left: 260px;
 }
 
 .toggle-btn {
