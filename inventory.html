@@ -26,6 +26,15 @@
     .table th, .table td {
       vertical-align: middle;
     }
+    #btnnn{
+        background-color: #5394de;
+    }
+    #btnnn:hover{
+        background-color: #3f79d1;
+    }
+    #btnnn:active{
+        background-color: #3566c0;
+    }
     </style>
     <div class="wrapper">
         <aside id="sidebar">
@@ -156,43 +165,31 @@
                     <div class="card-header d-flex justify-content-between align-items-center">
                       <h5>Products</h5>
                       <div>
-                        <button class="btn btn-primary btn-sm">Add Product</button>
-                        <button class="btn btn-outline-secondary btn-sm">Filters</button>
-                        <button class="btn btn-outline-secondary btn-sm">Download All</button>
+                        <button class="btn my-3" id="btnnn" onclick="showAddProductPage()">Add New Product</button>
+                        <!-- <button class="btn btn-outline-secondary">Filters</button>
+                        <button class="btn btn-outline-secondary">Download All</button> -->
                       </div>
                     </div>
                     <div class="card-body">
-                      <table class="table table-bordered">
-                        <thead>
-                          <tr>
-                            <th>Product</th>
-                            <th>Buying Price</th>
-                            <th>Quantity</th>
-                            <th>Threshold</th>
-                            <th>Expiry Date</th>
-                            <th>Availability</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td>Maggi</td>
-                            <td>₹430</td>
-                            <td>43 Packets</td>
-                            <td>12 Packets</td>
-                            <td>11/12/22</td>
-                            <td><span class="badge bg-success">In-stock</span></td>
-                          </tr>
-                          <tr>
-                            <td>Bru</td>
-                            <td>₹257</td>
-                            <td>22 Packets</td>
-                            <td>12 Packets</td>
-                            <td>21/12/22</td>
-                            <td><span class="badge bg-danger">Out of stock</span></td>
-                          </tr>
-                          <!-- Repeat rows as needed -->
-                        </tbody>
-                      </table>
+                        <table class="table table-bordered">
+                            <thead>
+                              <tr>
+                                <th>Product Name</th>
+                                <th>Product ID</th>
+                                <th>Category</th>
+                                <th>Buying Price</th>
+                                <th>Quantity</th>
+                                <th>Unit</th>
+                                <th>Expiry Date</th>
+                                <th>Threshold Value</th>
+                              </tr>
+                            </thead>
+                            <tbody id="productTableBody">
+                              <tr id="noProductsRow">
+                                <td colspan="8" class="no-products">No products available. Add a new product.</td>
+                              </tr>
+                            </tbody>
+                          </table>
                       <div class="d-flex justify-content-between">
                         <button class="btn btn-outline-secondary btn-sm">Previous</button>
                         <button class="btn btn-outline-secondary btn-sm">Next</button>
@@ -207,5 +204,40 @@
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
         crossorigin="anonymous"></script>
     <script src="dasboard.js"></script>
+    <script>
+        function showAddProductPage() {
+          window.location.href = 'new_product.html';
+        }
+    
+        function addProductToTable(product) {
+          const tableBody = document.getElementById('productTableBody');
+          const noProductsRow = document.getElementById('noProductsRow');
+    
+          // Remove "No Products" message
+          if (noProductsRow) {
+            noProductsRow.remove();
+          }
+    
+          // Add new product row
+          const newRow = document.createElement('tr');
+          newRow.innerHTML = `
+            <td>${product.name}</td>
+            <td>${product.id}</td>
+            <td>${product.category}</td>
+            <td>${product.price}</td>
+            <td>${product.quantity}</td>
+            <td>${product.unit}</td>
+            <td>${product.expiry}</td>
+            <td>${product.threshold}</td>
+          `;
+          tableBody.appendChild(newRow);
+        }
+    
+        // Load products from local storage on page load
+        document.addEventListener('DOMContentLoaded', () => {
+          const storedProducts = JSON.parse(localStorage.getItem('products')) || [];
+          storedProducts.forEach(addProductToTable);
+        });
+      </script>
 </body>
 </html>
