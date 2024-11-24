@@ -175,12 +175,10 @@
                             <thead>
                               <tr>
                                 <th>Product Name</th>
-                                <th>Product ID</th>
                                 <th>Category</th>
                                 <th>Buying Price</th>
                                 <th>Quantity</th>
-                                <th>Unit</th>
-                                <th>Expiry Date</th>
+                                <th>Selling Price</th>
                                 <th>Threshold Value</th>
                               </tr>
                             </thead>
@@ -205,39 +203,42 @@
         crossorigin="anonymous"></script>
     <script src="dasboard.js"></script>
     <script>
-        function showAddProductPage() {
-          window.location.href = 'new_product.html';
-        }
-    
-        function addProductToTable(product) {
-          const tableBody = document.getElementById('productTableBody');
-          const noProductsRow = document.getElementById('noProductsRow');
-    
-          // Remove "No Products" message
-          if (noProductsRow) {
-            noProductsRow.remove();
-          }
-    
-          // Add new product row
-          const newRow = document.createElement('tr');
-          newRow.innerHTML = `
-            <td>${product.name}</td>
-            <td>${product.id}</td>
-            <td>${product.category}</td>
-            <td>${product.price}</td>
-            <td>${product.quantity}</td>
-            <td>${product.unit}</td>
-            <td>${product.expiry}</td>
-            <td>${product.threshold}</td>
-          `;
-          tableBody.appendChild(newRow);
-        }
-    
-        // Load products from local storage on page load
         document.addEventListener('DOMContentLoaded', () => {
-          const storedProducts = JSON.parse(localStorage.getItem('products')) || [];
-          storedProducts.forEach(addProductToTable);
-        });
+  const productTableBody = document.getElementById('productTableBody');
+  const noProductsRow = document.getElementById('noProductsRow');
+
+  // Retrieve products from local storage
+  const products = JSON.parse(localStorage.getItem('products')) || [];
+
+  // Clear any existing rows
+  productTableBody.innerHTML = '';
+
+  if (products.length === 0) {
+    noProductsRow.style.display = ''; // Show "No products available" row
+  } else {
+    noProductsRow.style.display = 'none'; // Hide the no-products message
+    products.forEach((product) => {
+      const row = document.createElement('tr');
+
+      row.innerHTML = `
+        <td>${product.name}</td>
+        <td>${product.category}</td>
+        <td>${product.price}</td>
+        <td>${product.quantity}</td>
+        <td>${product.SellingPrice}</td>
+        <td>${product.threshold}</td>
+      `;
+
+      productTableBody.appendChild(row);
+    });
+  }
+});
+
+// Function to navigate to the Add Product page
+function showAddProductPage() {
+  window.location.href = 'new_product.html';
+}
+
       </script>
 </body>
 </html>
