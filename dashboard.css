@@ -6,6 +6,22 @@
     margin: 0;
     padding: 0;
 }
+:root{
+    --50: #f2f8fd;
+    --100: #e4eefa;
+    --200: #c2ddf5;
+    --300: #8dc1ec;
+    --400: #50a2e0;
+    --500: #2a87cd;
+    --600: #1b6aae;
+    --700: #17548d;
+    --800: #174875;
+    --900: #183e62;
+    --950: #0e2238;
+    --whiteColor:white;
+    --blackColor:black;
+    --grayColor:gray;
+}
 
 a {
     text-decoration: none;
