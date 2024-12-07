@@ -14,8 +14,10 @@
     <style>
         body{
             background-image: url(images/4002676.jpg);
+            background-position:center;
+            background-attachment: fixed;
             background-size: cover;
-            overflow: hidden;
+            overflow-x: hidden;
         }
         *{
             margin: 0px;
@@ -80,6 +82,19 @@
         .nav-item:hover{
             text-shadow: rgba(255,255,255) 0px 0px 30px;
         }
+        ::-webkit-scrollbar {
+    width: 15px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color:#007c88;
+    border-radius: 50px;
+    border: 2px solid  #006662;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background-color: #000f12;
+  }
     </style>
     <header>
         <div class="row" id="navbar-container">
@@ -104,7 +119,7 @@
         </div>
     </header>
     <div class="container">
-        <div class="row">
+        <div class="row" style="height: 100vh;">
             <div class="col" id="text">
                 <div class="title">
                     <svg width="480" height="97" viewBox="0 0 475 97" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -114,7 +129,11 @@
             </div>
         </div>
         <div class="row" style="height: auto;">
+            <div class="col">
+                <div class="row">
 
+                </div>
+            </div>
         </div>
     </div>
 </body>
