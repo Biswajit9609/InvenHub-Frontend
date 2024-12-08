@@ -49,41 +49,51 @@
                 <div class="row">
                     <section class="hero" id="heros">
                         <div class="container">
-                          <h1>Fast and Convenient Railway Reservations</h1>
-                          <p>Book your tickets quickly and easily with our reliable railway reservation system.</p>
+                          <h1>Comprehensive Inventory Management System</h1>
+                          <p>Streamline inventory tracking, barcode generation, sales management, and predictive analysis.</p>
                           <a href="#cta" class="btn btn-light btn-lg" id="lbtn">Get Started</a>
                         </div>
                       </section>
                       
                       <!-- Features Section -->
-                      <section id="features" class="features text-center">
+                      <section id="features" class="features">
                         <div class="container">
-                          <h2>Features</h2>
-                          <div class="row">
-                            <div class="col-md-4">
-                              <div class="feature-icon mb-3"><i class="fas fa-train"></i></div>
-                              <h4>Easy Booking</h4>
-                              <p>Quickly book your tickets with our user-friendly interface.</p>
+                            <h2 class="text-center" style="margin-bottom: 60px;">Key Features</h2>
+                            <div class="row text-center mt-4">
+                                <div class="col-md-4">
+                                    <h5>Product Addition & Barcode Generation</h5>
+                                    <p>Add products with details and generate unique barcodes instantly for easy tracking and labeling.</p>
+                                </div>
+                                <div class="col-md-4">
+                                    <h5>Real-time Inventory Tracking</h5>
+                                    <p>Scan barcodes to update stock in real-time and receive low-stock alerts for timely restocking.</p>
+                                </div>
+                                <div class="col-md-4">
+                                    <h5>Sales & Transaction Management</h5>
+                                    <p>Automate sales recording, bill generation, and calculate profits to track business success.</p>
+                                </div>
+                                <div class="col-md-4" style="margin-top: 50px;">
+                                    <h5>Comprehensive Reporting</h5>
+                                    <p>Generate weekly or monthly reports on sales, stock levels, and profitability for business insights.</p>
+                                </div>
+                                <div class="col-md-4" style="margin-top: 50px;">
+                                    <h5>Predictive Sales Analysis (ML-Powered)</h5>
+                                    <p>Use historical data to forecast future demand, optimize stock, and gain personalized insights.</p>
+                                </div>
+                                <div class="col-md-4" style="margin-top: 50px;">
+                                    <h5>Cloud-Based Backend System</h5>
+                                    <p>Securely store data with real-time synchronization between the mobile app and backend.</p>
+                                </div>
                             </div>
-                            <div class="col-md-4">
-                              <div class="feature-icon mb-3"><i class="fas fa-clock"></i></div>
-                              <h4>Real-time Schedules</h4>
-                              <p>Stay updated with accurate train schedules and delays.</p>
-                            </div>
-                            <div class="col-md-4">
-                              <div class="feature-icon mb-3"><i class="fas fa-shield-alt"></i></div>
-                              <h4>Secure Payments</h4>
-                              <p>Enjoy secure and reliable online payment options.</p>
-                            </div>
-                          </div>
                         </div>
-                      </section>
+                    </section>
                       
                       <!-- CTA Section -->
                       <section id="cta" class="cta">
                         <div class="container">
-                          <h2>Ready to Book Your Train Journey?</h2>
-                          <a href="#pricing" class="btn btn-light btn-lg" id="lbtn">Check Pricing</a>
+                          <h2 style="margin-bottom: 20px;">Ready to Simplify Your Inventory?</h2>
+                          <p>Sign up now to manage your inventory effectively and boost profitability!</p>
+                          <a href="/signup" class="btn btn-light btn-lg" id="lbtn">Get Started</a>
                         </div>
                       </section>
                       
@@ -117,16 +127,16 @@
                           <h2>How It Works</h2>
                           <div class="row">
                             <div class="col-md-4">
-                              <h4>Step 1</h4>
-                              <p>Select your route and schedule.</p>
+                              <h5>Step 1</h5>
+                    <p>Sign up and set up your inventory details.</p>
                             </div>
                             <div class="col-md-4">
-                              <h4>Step 2</h4>
-                              <p>Choose your preferred seat and class.</p>
+                              <h5>Step 2</h5>
+                    <p>Track items in real-time with automated alerts.</p>
                             </div>
                             <div class="col-md-4">
-                              <h4>Step 3</h4>
-                              <p>Complete the booking and enjoy your trip!</p>
+                              <h5>Step 3</h5>
+                    <p>Analyze inventory data and make informed decisions.</p>
                             </div>
                           </div>
                         </div>
@@ -171,33 +181,30 @@
                       </section>
                       
                       <!-- Contact Section -->
-                      <section id="contact" class="contact text-center">
+                      <section id="contact" class="contact">
                         <div class="container">
-                          <h2>Contact Us</h2>
-                          <p>If you have any questions, feel free to reach out.</p>
-                          <form class="mt-3">
-                            <div class="form-row">
-                              <div class="col-md-6 mb-3">
-                                <input type="text" class="form-control" placeholder="Your Name" required>
-                              </div>
-                              <div class="col-md-6 mb-3">
-                                <input type="email" class="form-control" placeholder="Your Email" required>
-                              </div>
+                            <h2 class="text-center">Contact Us</h2>
+                            <div class="row justify-content-center mt-4">
+                                <div class="col-md-8">
+                                    <form>
+                                        <div class="form-group">
+                                            <label for="name">Name</label>
+                                            <input type="text" class="form-control" id="name" placeholder="Enter your name">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="email">Email</label>
+                                            <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="message">Message</label>
+                                            <textarea class="form-control" id="message" rows="4" placeholder="Enter your message"></textarea>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+                                    </form>
+                                </div>
                             </div>
-                            <div class="form-group">
-                              <textarea class="form-control" rows="4" placeholder="Message"></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Submit</button>
-                          </form>
                         </div>
-                      </section>
-                      
-                      <!-- Footer -->
-                      <footer class="footer text-center">
-                        <div class="container">
-                          <p>&copy; 2024 Railway Reservation System. All rights reserved.</p>
-                        </div>
-                      </footer>
+                    </section>
                 </div>
             </div>
         </div>
