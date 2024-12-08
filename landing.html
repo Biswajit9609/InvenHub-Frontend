@@ -18,6 +18,7 @@
             background-attachment: fixed;
             background-size: cover;
             overflow-x: hidden;
+            color: white;
         }
         *{
             margin: 0px;
@@ -95,6 +96,164 @@
   ::-webkit-scrollbar-track {
     background-color: #000f12;
   }
+  .hero { background: linear-gradient(135deg,rgba(225,225,225,0.1),rgba(225,225,225,0));
+            backdrop-filter: blur(10px);border-radius: 15px; border: 1px solid white;
+            -webkit-backdrop-filter: blur(10px); color: white; padding: 100px 0; text-align: center; }
+    .features, .pricing, .steps, .testimonials, .contact{ padding: 50px 0; }
+    .cta ,.testimonials{ background: linear-gradient(135deg,rgba(225,225,225,0.1),rgba(225,225,225,0));
+            backdrop-filter: blur(10px);border-radius: 15px; border: 1px solid white;
+            -webkit-backdrop-filter: blur(10px); color: white; padding: 50px 0; text-align: center; }
+    .footer { background-color: #343a40; color: white; width: 100vw;}
+    .feature-icon { font-size: 2em; color: #007bff; }
+    #opt,#dropdownMenuButton{
+      border: 2px solid transparent;
+      background-color: transparent;
+      border-radius: 8px;
+    }
+    #opt:hover,#dropdownMenuButton:hover{
+      border: 2px solid white;
+      background-color: transparent;
+    }
+    #dropdownMenuButton:active{
+      border: 2px solid white;
+      background-color: transparent;
+    }
+    #heros{
+      background-image: url(images/ranjit-pradhan-e1IhTww3XMg-unsplash.jpg);
+      background-size: cover;
+    }
+    #lbtn{
+        background-color: #00969c;
+        border: 2px solid transparent;
+        margin-top: 20px;
+    }
+    #lbtn:hover{
+        background-color:  #005264;
+        border: 2px solid white;
+        color: white;
+    }
+    :root{
+  --background-dark: #2d3548;
+  --text-light: rgba(255,255,255,0.6);
+  --text-lighter: rgba(255,255,255,0.9);
+  --spacing-s: 8px;
+  --spacing-m: 16px;
+  --spacing-l: 24px;
+  --spacing-xl: 32px;
+  --spacing-xxl: 64px;
+  --width-container: 1200px;
+}
+
+*{
+  border: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  height: 100%;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+}
+
+body{
+  height: 100%;
+}
+
+.hero-section{
+  align-items: flex-start;
+  background-color: transparent;
+  display: flex;
+  min-height: 100%;
+  justify-content: center;
+  padding: var(--spacing-xxl) var(--spacing-l);
+}
+
+.card-grid{
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-column-gap: var(--spacing-l);
+  grid-row-gap: var(--spacing-l);
+  max-width: var(--width-container);
+  width: 100%;
+}
+
+@media(min-width: 540px){
+  .card-grid{
+    grid-template-columns: repeat(2, 1fr); 
+  }
+}
+
+@media(min-width: 960px){
+  .card-grid{
+    grid-template-columns: repeat(4, 1fr); 
+  }
+}
+
+.card{
+  list-style: none;
+  position: relative;
+  background-color: transparent;
+  border: 3px solid #005264;
+  border-radius: 27px;
+}
+
+.card:before{
+  content: '';
+  display: block;
+  padding-bottom: 150%;
+  width: 100%;
+  background-color: transparent;
+}
+
+.card__background{
+  background-size: cover;
+  background-position: center;
+  border-radius: var(--spacing-l);
+  bottom: 0;
+  filter: brightness(0.75) saturate(1.2) contrast(0.85);
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform-origin: center;
+  trsnsform: scale(1) translateZ(0);
+  transition: 
+    filter 200ms linear,
+    transform 200ms linear;
+    background-color: transparent;
+}
+
+.card:hover .card__background{
+  transform: scale(1.05) translateZ(0);
+}
+
+.card-grid:hover > .card:not(:hover) .card__background{
+  filter: brightness(0.5) saturate(0) contrast(1.2) blur(20px);
+}
+
+.card__content{
+  left: 0;
+  padding: var(--spacing-l);
+  position: absolute;
+  top: 0;
+}
+
+.card__category{
+  color: var(--text-light);
+  font-size: 0.9rem;
+  margin-bottom: var(--spacing-s);
+  text-transform: uppercase;
+}
+
+.card__heading{
+  color: var(--text-lighter);
+  font-size: 1.9rem;
+  text-shadow: 2px 2px 20px rgba(0,0,0,0.2);
+  line-height: 1.4;
+  word-spacing: 100vw;
+}
     </style>
     <header>
         <div class="row" id="navbar-container">
@@ -131,10 +290,164 @@
         <div class="row" style="height: auto;">
             <div class="col">
                 <div class="row">
-
+                    <section class="hero" id="heros">
+                        <div class="container">
+                          <h1>Fast and Convenient Railway Reservations</h1>
+                          <p>Book your tickets quickly and easily with our reliable railway reservation system.</p>
+                          <a href="#cta" class="btn btn-light btn-lg" id="lbtn">Get Started</a>
+                        </div>
+                      </section>
+                      
+                      <!-- Features Section -->
+                      <section id="features" class="features text-center">
+                        <div class="container">
+                          <h2>Features</h2>
+                          <div class="row">
+                            <div class="col-md-4">
+                              <div class="feature-icon mb-3"><i class="fas fa-train"></i></div>
+                              <h4>Easy Booking</h4>
+                              <p>Quickly book your tickets with our user-friendly interface.</p>
+                            </div>
+                            <div class="col-md-4">
+                              <div class="feature-icon mb-3"><i class="fas fa-clock"></i></div>
+                              <h4>Real-time Schedules</h4>
+                              <p>Stay updated with accurate train schedules and delays.</p>
+                            </div>
+                            <div class="col-md-4">
+                              <div class="feature-icon mb-3"><i class="fas fa-shield-alt"></i></div>
+                              <h4>Secure Payments</h4>
+                              <p>Enjoy secure and reliable online payment options.</p>
+                            </div>
+                          </div>
+                        </div>
+                      </section>
+                      
+                      <!-- CTA Section -->
+                      <section id="cta" class="cta">
+                        <div class="container">
+                          <h2>Ready to Book Your Train Journey?</h2>
+                          <a href="#pricing" class="btn btn-light btn-lg" id="lbtn">Check Pricing</a>
+                        </div>
+                      </section>
+                      
+                      <!-- Pricing Section -->
+                      <section id="pricing" class="pricing text-center">
+                        <div class="container">
+                          <h2>Pricing</h2>
+                          <div class="row">
+                            <div class="col-md-4">
+                              <h4>Basic</h4>
+                              <p>Starting from 299 only.</p>
+                              <button class="btn btn-primary" id="lbtn">Select</button>
+                            </div>
+                            <div class="col-md-4">
+                              <h4>Standard</h4>
+                              <p>Starting from 499 only</p>
+                              <button class="btn btn-primary" id="lbtn">Select</button>
+                            </div>
+                            <div class="col-md-4">
+                              <h4>Premium</h4>
+                              <p>Starting from 999 only</p>
+                              <button class="btn btn-primary" id="lbtn">Select</button>
+                            </div>
+                          </div>
+                        </div>
+                      </section>
+                      
+                      <!-- Steps Section -->
+                      <section id="steps" class="steps text-center">
+                        <div class="container">
+                          <h2>How It Works</h2>
+                          <div class="row">
+                            <div class="col-md-4">
+                              <h4>Step 1</h4>
+                              <p>Select your route and schedule.</p>
+                            </div>
+                            <div class="col-md-4">
+                              <h4>Step 2</h4>
+                              <p>Choose your preferred seat and class.</p>
+                            </div>
+                            <div class="col-md-4">
+                              <h4>Step 3</h4>
+                              <p>Complete the booking and enjoy your trip!</p>
+                            </div>
+                          </div>
+                        </div>
+                      </section>
+                      
+                      <!-- Testimonials Section -->
+                      <section class="hero-section">
+                        <div class="card-grid">
+                          <a class="card" href="#">
+                            <div class="card__background" style="background-image:url(images/digital-digital-art-artwork-illustration-minimalism-hd-wallpaper-thumb.jpg);background-size: cover;"></div>
+                            <div class="card__content">
+                              <p class="card__category">10/5/24</p>
+                              <h3 class="card__heading">Debjyoti Ghosh</h3>
+                              <p style="color: wheat; margin-top: 30px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, corporis?Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem accusamus deserunt dolore repellat! Ab cupiditate mollitia repudiandae ipsum laudantium ipsa!</p>
+                            </div>
+                          </a>
+                          <a class="card" href="#">
+                            <div class="card__background" style="background-image: url(images/sunset-drawing-animals-lake-wallpaper-thumb.jpg);background-size: cover;"></div>
+                            <div class="card__content">
+                              <p class="card__category">8/5/24</p>
+                              <h3 class="card__heading">Biswajit Chatterjee</h3>
+                              <p style="color: wheat; margin-top: 30px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, corporis?Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem accusamus deserunt dolore repellat! Ab cupiditate mollitia repudiandae ipsum laudantium ipsa!</p>
+                            </div>
+                          </a>
+                          <a class="card" href="#">
+                            <div class="card__background" style="background-image: url(images/wallpaperflare.com_wallpaper\ \(10\).jpg);background-size: cover;"></div>
+                            <div class="card__content">
+                              <p class="card__category">6/5/24</p>
+                              <h3 class="card__heading">Subhajit Das</h3>
+                              <p style="color: wheat; margin-top: 30px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, corporis?Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem accusamus deserunt dolore repellat! Ab cupiditate mollitia repudiandae ipsum laudantium ipsa!</p>
+                            </div>
+                          </li>
+                          <a class="card" href="#">
+                            <div class="card__background" style="background-image: url(images/wallpaperflare.com_wallpaper.jpg);background-size: cover;"></div>
+                            <div class="card__content">
+                              <p class="card__category">4/5/24</p>
+                              <h3 class="card__heading">Ice maji</h3>
+                              <p style="color: wheat; margin-top: 30px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, corporis?Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem accusamus deserunt dolore repellat! Ab cupiditate mollitia repudiandae ipsum laudantium ipsa!</p>
+                            </div>
+                          </a>
+                        <div>
+                      </section>
+                      
+                      <!-- Contact Section -->
+                      <section id="contact" class="contact text-center">
+                        <div class="container">
+                          <h2>Contact Us</h2>
+                          <p>If you have any questions, feel free to reach out.</p>
+                          <form class="mt-3">
+                            <div class="form-row">
+                              <div class="col-md-6 mb-3">
+                                <input type="text" class="form-control" placeholder="Your Name" required>
+                              </div>
+                              <div class="col-md-6 mb-3">
+                                <input type="email" class="form-control" placeholder="Your Email" required>
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <textarea class="form-control" rows="4" placeholder="Message"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                          </form>
+                        </div>
+                      </section>
+                      
+                      <!-- Footer -->
+                      <footer class="footer text-center">
+                        <div class="container">
+                          <p>&copy; 2024 Railway Reservation System. All rights reserved.</p>
+                        </div>
+                      </footer>
                 </div>
             </div>
         </div>
     </div>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
