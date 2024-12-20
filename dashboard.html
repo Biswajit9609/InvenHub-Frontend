@@ -106,8 +106,14 @@
                         <div class="col-5" style="height: auto;">
                             <input class="form-control" type="search" placeholder="Search" aria-label="Search">
                         </div>
-                        <div class="col-1"><button class="btn" id="btnn" type="submit">Search</button></div>
-                        <div class="col-5"></div>
+                        <div class="col"><button class="btn" id="btnn" type="submit">Search</button></div>
+                        <div class="col-5">
+                            <div class="row">
+                                <div class="col"></div>
+                                <div class="col-6" id="clock" style="height: 100%;"></div>
+                                <div class="col"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="col d-flex justify-content-center align-items-center" style="height: auto;">
@@ -293,5 +299,18 @@ new Chart("myChart", {
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
         crossorigin="anonymous"></script>
     <script src="dasboard.js"></script>
+    <script>
+        function updateTime() {
+          const clockElement = document.getElementById('clock');
+          const now = new Date();
+          clockElement.textContent = now.toLocaleString();
+        }
+    
+        // Update time every second
+        setInterval(updateTime, 1000);
+    
+        // Initialize time immediately
+        updateTime();
+      </script>
 </body>
 </html>
