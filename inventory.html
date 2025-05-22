@@ -176,6 +176,7 @@
                         <table class="table table-bordered">
                             <thead>
                               <tr>
+                                <th>Product ID</th>
                                 <th>Product Name</th>
                                 <th>Category</th>
                                 <th>Buying Price</th>
@@ -223,6 +224,7 @@
       const row = document.createElement('tr');
 
       row.innerHTML = `
+        <td>${product.id}</td>
         <td>${product.name}</td>
         <td>${product.category}</td>
         <td>${product.price}</td>
